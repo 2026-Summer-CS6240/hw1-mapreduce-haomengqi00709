@@ -37,10 +37,25 @@
 		<value>4096</value>
     </property>
     
-<!-- 
+<!--
 	<property>
 		<name>mapred.child.java.opts</name>
 		<value>-Djava.library.path=/home/joe/R/x86_64-pc-linux-gnu-library/3.2/rJava/jri/ -Xms512M -Xmx1524M</value>
 	</property>
 -->
+
+    <!-- Hadoop 3.x + YARN: 必须显式告诉 container 怎么找到 HADOOP_HOME，否则报
+         ClassNotFoundException: org.apache.hadoop.mapreduce.v2.app.MRAppMaster -->
+    <property>
+        <name>yarn.app.mapreduce.am.env</name>
+        <value>HADOOP_MAPRED_HOME=${HADOOP_HOME}</value>
+    </property>
+    <property>
+        <name>mapreduce.map.env</name>
+        <value>HADOOP_MAPRED_HOME=${HADOOP_HOME}</value>
+    </property>
+    <property>
+        <name>mapreduce.reduce.env</name>
+        <value>HADOOP_MAPRED_HOME=${HADOOP_HOME}</value>
+    </property>
 </configuration>
