@@ -2,20 +2,20 @@
 
 # Customize these paths for your environment.
 # -----------------------------------------------------------
-hadoop.root=/usr/local/hadoop-3.3.5
+hadoop.root=/Volumes/Storage/CS6240/hadoop-3.3.5
 jar.name=mr-demo-1.0.jar
 jar.path=target/${jar.name}
 job.name=wc.WordCount
 local.input=input
 local.output=output
 # Pseudo-Cluster Execution
-hdfs.user.name=joe
+hdfs.user.name=jasonhao
 hdfs.input=input
 hdfs.output=output
 # AWS EMR Execution
 aws.emr.release=emr-6.10.0
 aws.region=us-east-1
-aws.bucket.name=cs6240-demo-bucket
+aws.bucket.name=cs6240-hw1-haomengqi-2026
 aws.subnet.id=subnet-6356553a
 aws.input=input
 aws.output=output
